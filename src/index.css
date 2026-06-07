@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Zen Kaku Gothic New", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0e1822;
+  color: #eef2f0;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.045);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+  }
+  .glass-strong {
+    background: rgba(22, 36, 47, 0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .vline {
+    background: linear-gradient(180deg, rgba(108, 123, 181, 0), rgba(108, 123, 181, 0.55), rgba(108, 123, 181, 0));
+  }
+}
+
+/* 雨夜大气背景纹理 */
+.bg-rainnight {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(108, 123, 181, 0.22), transparent 60%),
+    radial-gradient(900px 500px at 0% 20%, rgba(74, 107, 124, 0.18), transparent 55%),
+    linear-gradient(180deg, #0e1822 0%, #16242f 45%, #1a2b3c 100%);
+}
+
+/* 细噪点 */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.text-sheen {
+  background: linear-gradient(90deg, #eef2f0 0%, #e0a060 25%, #6c7bb5 50%, #eef2f0 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0e1822;
+}
+::-webkit-scrollbar-thumb {
+  background: #26404f;
+  border-radius: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a6b7c;
+}
