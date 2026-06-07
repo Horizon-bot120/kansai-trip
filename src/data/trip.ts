@@ -1,5 +1,5 @@
-// 「梅雨之间 · 关西七日漫游」行程数据
-// 2026.6.14(周日) — 6.21(周日) 大阪 · 奈良 · 宇治 · 京都 · 神户
+// 「梅雨之间 · 关西漫游」行程数据
+// 2026.6.13(周六) — 6.21(周日) 名古屋 · 京都 · 宇治 · 奈良 · 大阪 · 神户
 
 export interface DayPlan {
   day: number;
@@ -39,31 +39,46 @@ export interface CityNode {
 export const TRIP_META = {
   title: "梅雨之间",
   titleEn: "BETWEEN THE RAINS",
-  subtitle: "关西七日漫游",
-  dateRange: "2026.6.14 — 6.21",
-  days: 7,
-  cities: 5,
+  subtitle: "关西八日漫游",
+  dateRange: "2026.6.13 — 6.21",
+  days: 8,
+  cities: 6,
   tagline: "梅雨不是阻碍，而是关西最温柔的滤镜。",
 };
 
 export const days: DayPlan[] = [
   {
     day: 1,
+    date: "6.13",
+    weekday: "周六",
+    city: "名古屋",
+    cityColor: "#c4604f",
+    theme: "中部序曲・常滑花火",
+    subtitle: "Nagoya & Tokoname Fireworks",
+    morning: "中部国际机场/名古屋集合。先去「名古屋城」看金鯱与本丸御殿的障壁画复原，再到旁边的「德川园」赏雨中回游式庭园，绿苔与池水梅雨季最润。",
+    afternoon: "转往常滑——这座「烧物之乡」的「やきもの散歩道」陶器小巷，墙上嵌满陶土与酒瓶，沿坡而上有招财猫巨像「とこにゃん」；雨天窑屋作坊里还能体验拉胚。先在常滑解决晚饭（海鲜或鳗鱼饭）。",
+    evening: "压轴「常滑花火大会」——伊势湾岸边的夏夜花火，海风与火花同框；散场后从中部空港/常滑站坐车（近铁/JR 经名古屋换乘新干线）夜行直奔京都入住。",
+    unique: ["常滑陶器小巷拉胚", "招财猫巨像とこにゃん", "伊势湾常滑花火大会"],
+    rainPlanB: "花火若因雨延期/取消，则改名古屋市区：「磁卡 SCMAGLEV 铁道馆」或「丰田产业技术纪念馆」室内玩到晚，再坐车去京都。",
+    budget: 9000,
+  },
+  {
+    day: 2,
     date: "6.14",
     weekday: "周日",
     city: "京都",
     cityColor: "#6c7bb5",
     theme: "落地・古都序章",
     subtitle: "Arrival in Kyoto",
-    morning: "关西机场入境 → JR HARUKA 特急直奔京都，行李寄存酒店。先在「锦市场」有顶拱廊里扫街暖身，找一把属于自己的雨季武器：透明胶伞或限定文具。",
+    morning: "京都半日慢启动（昨夜已抵京都）。先在「锦市场」有顶拱廊里扫街暖身，找一把属于自己的雨季武器：透明胶伞或限定文具。",
     afternoon: "河原町・三条一带，沿高濑川与木屋町散步，雨后柳枝与河灯最有氛围，钻进一家町家咖啡歇脚。",
-    evening: "夜访「先斗町」窄巷，雨夜灯笼一字排开，找一家只有 8 个座位的小店，为七日旅程开场。",
+    evening: "夜访「先斗町」窄巷，雨夜灯笼一字排开，找一家只有 8 个座位的小店，为关西旅程正式开场。",
     unique: ["锦市场拱廊扫街", "雨夜先斗町窄巷"],
     rainPlanB: "锦市场、商场、町家咖啡全程有顶，落地首日下雨也轻松适应。",
     budget: 9000,
   },
   {
-    day: 2,
+    day: 3,
     date: "6.15",
     weekday: "周一",
     city: "京都",
@@ -78,7 +93,7 @@ export const days: DayPlan[] = [
     budget: 13000,
   },
   {
-    day: 3,
+    day: 4,
     date: "6.16",
     weekday: "周二",
     city: "京都",
@@ -93,7 +108,7 @@ export const days: DayPlan[] = [
     budget: 12000,
   },
   {
-    day: 4,
+    day: 5,
     date: "6.17",
     weekday: "周三",
     city: "宇治",
@@ -108,7 +123,7 @@ export const days: DayPlan[] = [
     budget: 10000,
   },
   {
-    day: 5,
+    day: 6,
     date: "6.18",
     weekday: "周四",
     city: "奈良",
@@ -123,7 +138,7 @@ export const days: DayPlan[] = [
     budget: 11000,
   },
   {
-    day: 6,
+    day: 7,
     date: "6.19",
     weekday: "周五",
     city: "大阪",
@@ -138,7 +153,7 @@ export const days: DayPlan[] = [
     budget: 10000,
   },
   {
-    day: 7,
+    day: 8,
     date: "6.20",
     weekday: "周六",
     city: "神户",
@@ -154,10 +169,19 @@ export const days: DayPlan[] = [
   },
 ];
 
-// 第8天为返程,合并在 footer 表述; 时间轴展示 7 个游玩日
+// 末日为返程,合并在 footer 表述; 时间轴展示 8 个游玩日
 export const RETURN_NOTE = "6.21(周日) · 大阪关西机场返程 — 出发前可在临空 PREMIUM OUTLETS 扫尾购物。";
 
 export const highlights: Highlight[] = [
+  {
+    emoji: "🎆",
+    title: "常滑海湾花火",
+    desc: "6.13 在名古屋常滑，伊势湾畔的夏夜花火，看完坐夜车直奔京都。",
+    whyUnique: "以一场海边花火为整趟旅程拉开序幕，海风与火花同框的开场仪式感。",
+    imagePrompt: "summer fireworks festival over ise bay at tokoname japan, colorful fireworks reflecting on dark sea water, crowd silhouettes on the shore at night, cinematic wide shot",
+    imageSize: "landscape_16_9",
+    tone: "lamp",
+  },
   {
     emoji: "💍",
     title: "硬币变戒指",
@@ -207,7 +231,7 @@ export const highlights: Highlight[] = [
     emoji: "🌃",
     title: "摩耶山百万夜景",
     desc: "缆车登摩耶山掬星台，俯瞰神户港湾被称作「日本三大夜景」的灯海。",
-    whyUnique: "雨后空气通透，云海与灯火交叠，是 7 天旅程最戏剧化的收尾。",
+    whyUnique: "雨后空气通透，云海与灯火交叠，是整趟旅程最戏剧化的收尾。",
     imagePrompt: "panoramic night view of kobe harbor city lights from maya mountain observatory, sea of clouds, glittering city below, deep blue twilight, cinematic",
     imageSize: "landscape_16_9",
     tone: "mist",
@@ -215,11 +239,12 @@ export const highlights: Highlight[] = [
 ];
 
 export const cityNodes: CityNode[] = [
-  { name: "京都", romaji: "KYOTO", x: 380, y: 175, days: [1, 2, 3], color: "#6c7bb5" },
-  { name: "宇治", romaji: "UJI", x: 410, y: 250, days: [4], color: "#7a8c5a" },
-  { name: "奈良", romaji: "NARA", x: 470, y: 360, days: [5], color: "#7a8c5a" },
-  { name: "大阪", romaji: "OSAKA", x: 300, y: 330, days: [6], color: "#e0a060" },
-  { name: "神户", romaji: "KOBE", x: 165, y: 290, days: [7], color: "#4a6b7c" },
+  { name: "名古屋", romaji: "NAGOYA", x: 560, y: 110, days: [1], color: "#c4604f" },
+  { name: "京都", romaji: "KYOTO", x: 380, y: 175, days: [2, 3, 4], color: "#6c7bb5" },
+  { name: "宇治", romaji: "UJI", x: 410, y: 250, days: [5], color: "#7a8c5a" },
+  { name: "奈良", romaji: "NARA", x: 470, y: 360, days: [6], color: "#7a8c5a" },
+  { name: "大阪", romaji: "OSAKA", x: 300, y: 330, days: [7], color: "#e0a060" },
+  { name: "神户", romaji: "KOBE", x: 165, y: 290, days: [8], color: "#4a6b7c" },
 ];
 
 export const tips = {
@@ -248,6 +273,32 @@ export const tips = {
     { name: "Google Maps", use: "电车换乘 + 步行导航" },
     { name: "ICOCA / 关西周游券", use: "刷卡坐遍关西私铁地铁" },
     { name: "NAVITIME Transit", use: "JR/私铁班次与票价" },
+  ],
+  onsen: [
+    {
+      name: "有马温泉",
+      area: "神户近郊",
+      access: "从神户/大阪约 1 小时",
+      feature: "关西最古老名汤，「金汤」含铁泛红、「银汤」碳酸透明。可与神户 Day8 顺路接驳，泡完看完夜景再回。",
+    },
+    {
+      name: "城崎温泉",
+      area: "兵库北部",
+      access: "京都/大阪 JR 特急约 2.5 小时",
+      feature: "穿浴衣木屐逛七大外汤的温泉古街，柳树小河+石桥，雨天烟雨朦胧最有味，适合多留一晚。",
+    },
+    {
+      name: "南纪白浜温泉",
+      area: "和歌山",
+      access: "大阪 JR 特急约 2.5 小时",
+      feature: "面太平洋的海边温泉，「崎之汤」露天汤池就在礁石海浪边，泡汤看海一绝。",
+    },
+    {
+      name: "汤之峰 / 川汤温泉",
+      area: "和歌山熊野",
+      access: "纪伊半岛深处，需包车/巴士",
+      feature: "世界遗产熊野古道旁的秘汤，川汤可自己在河床挖坑成汤，骨灰级温泉迷之选。",
+    },
   ],
 };
 

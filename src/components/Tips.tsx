@@ -11,6 +11,7 @@ import {
   Sun,
   Lightbulb,
   Smartphone,
+  Waves,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import SectionHeading from "./SectionHeading";
@@ -131,6 +132,42 @@ export default function Tips() {
                 </li>
               ))}
             </ul>
+          </motion.div>
+
+          {/* 关西温泉延伸 */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="glass rounded-3xl p-7 lg:col-span-3"
+          >
+            <h3 className="font-mincho mb-1 flex items-center gap-2 text-xl font-bold text-ajisai">
+              <Waves className="h-5 w-5" />
+              想泡温泉？关西可达汤乡
+            </h3>
+            <p className="font-zen mb-5 text-xs text-paper/50">
+              梅雨阴雨天最适合泡汤。下面几处都能从关西出发，可挑一处加进行程或单独延长一晚。
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {tips.onsen.map((o) => (
+                <div
+                  key={o.name}
+                  className="flex flex-col rounded-2xl bg-white/5 p-4 transition hover:bg-white/10"
+                >
+                  <p className="font-mincho text-lg font-bold text-paper">{o.name}</p>
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-ajisai/15 px-2 py-0.5 font-zen text-[11px] text-ajisai">
+                      {o.area}
+                    </span>
+                    <span className="font-zen text-[11px] text-paper/45">{o.access}</span>
+                  </div>
+                  <p className="font-zen mt-3 text-xs leading-relaxed text-paper/70">
+                    {o.feature}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

@@ -9,8 +9,8 @@ export default function Itinerary() {
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           kicker="ITINERARY"
-          title="七日行程时间轴"
-          desc="自落地京都，到神户百万夜景收尾。每天都为梅雨准备了室内 Plan B，下雨也不慌。"
+          title="八日行程时间轴"
+          desc="自名古屋常滑花火启程，夜车入京都，到神户百万夜景收尾。每天都为梅雨准备了室内 Plan B，下雨也不慌。"
         />
 
         <div className="relative">

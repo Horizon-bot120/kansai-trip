@@ -4,10 +4,10 @@ import SectionHeading from "./SectionHeading";
 import { cityNodes, days } from "../data/trip";
 
 // 城市连线顺序（按行程推进）
-const routeOrder = ["京都", "宇治", "奈良", "大阪", "神户"];
+const routeOrder = ["名古屋", "京都", "宇治", "奈良", "大阪", "神户"];
 
 export default function KansaiMap() {
-  const [selected, setSelected] = useState<string>("京都");
+  const [selected, setSelected] = useState<string>("名古屋");
   const node = cityNodes.find((c) => c.name === selected)!;
   const selectedDays = days.filter((d) => node.days.includes(d.day));
 
@@ -22,7 +22,7 @@ export default function KansaiMap() {
         <SectionHeading
           kicker="MAP"
           title="关西漫游地图"
-          desc="点击城市节点，查看那座城的行程精华。虚线是七日推进的足迹。"
+          desc="点击城市节点，查看那座城的行程精华。虚线是八日推进的足迹。"
         />
 
         <div className="grid items-center gap-8 md:grid-cols-[1.3fr_1fr]">

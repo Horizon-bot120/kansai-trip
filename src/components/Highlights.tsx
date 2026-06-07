@@ -21,7 +21,7 @@ export default function Highlights() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           kicker="HIGHLIGHTS"
-          title="六个独创玩法"
+          title="七个独创玩法"
           desc="不是排行榜上的人气王，而是为这趟梅雨之旅精挑的「只此一次」体验。"
         />
 
